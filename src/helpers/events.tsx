@@ -9,10 +9,10 @@ export function getAllEvents() {
   return DUMMY_EVENTS;
 }
 
-export function getFilteredEvents(dateFilter: any) {
+export function getFilteredEvents(dateFilter: { year: number; month: number }) {
   const { year, month } = dateFilter;
 
-  let filteredEvents = DUMMY_EVENTS.filter((event) => {
+  let filteredEvents = DUMMY_EVENTS.filter((event: Event) => {
     const eventDate = new Date(event.date);
     return (
       eventDate.getFullYear() === year && eventDate.getMonth() === month - 1
