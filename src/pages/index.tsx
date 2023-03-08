@@ -1,4 +1,4 @@
-import { getFeaturedEvents } from "../store/events";
+import { getFeaturedEvents } from "../helpers/events";
 import EventList from "../components/events/event-list";
 const HomePage = () => {
   const featuredEvents = getFeaturedEvents();
