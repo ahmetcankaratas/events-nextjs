@@ -1,7 +1,7 @@
 import { Event } from "@/@types/api";
 import EventItem from "./event-item";
 import classes from "./event-list.module.scss";
-const Eventlist: React.FC<{ items: Event[] }> = ({ items }) => {
+const EventList: React.FC<{ items: Event[] }> = ({ items }) => {
   return (
     <ul className={classes.list}>
       {items.map((event) => (
@@ -11,4 +11,4 @@ const Eventlist: React.FC<{ items: Event[] }> = ({ items }) => {
   );
 };
 
-export default Eventlist;
+export default EventList;
