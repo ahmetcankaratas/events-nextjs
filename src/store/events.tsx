@@ -34,7 +34,7 @@ const DUMMY_EVENTS: Event[] = [
 ];
 
 export function getFeaturedEvents() {
-  return DUMMY_EVENTS.filter((event) => event.isFeatured);
+  return DUMMY_EVENTS.filter((event: Event) => event.isFeatured);
 }
 
 export function getAllEvents() {
