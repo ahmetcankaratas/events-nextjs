@@ -1,24 +1,28 @@
-import { getFeaturedEvents } from "../helpers/events";
+import { getFeaturedEvents } from "../helpers/api-util";
 import EventList from "../components/events/event-list";
-import EventsSearch from "@/components/events/events-seach";
-import { useRouter } from "next/router";
+import { Event } from "@/@types/api";
 
-const HomePage = () => {
-  const router = useRouter();
-  const featuredEvents = getFeaturedEvents();
+type HomePageProps = {
+  events: Event[];
+};
 
-  const findEventsHandler = (year: string, month: string) => {
-    const fullPath = `/events/${year}/${month}`;
-
-    router.push(fullPath);
-  };
-
+const HomePage: React.FC<HomePageProps> = (props) => {
   return (
-    <>
-      <EventsSearch onSearch={findEventsHandler} />
-      <EventList items={featuredEvents} />
-    </>
+    <div>
+      <EventList items={props.events} />
+    </div>
   );
 };
+
+export async function getStaticProps() {
+  const featuredEvents = await getFeaturedEvents();
+
+  return {
+    props: {
+      events: featuredEvents,
+    },
+    revalidate: 1800,
+  };
+}
 
 export default HomePage;

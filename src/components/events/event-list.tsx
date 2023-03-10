@@ -1,7 +1,11 @@
 import { Event } from "@/@types/api";
 import EventItem from "./event-item";
 import classes from "./event-list.module.scss";
-const EventList: React.FC<{ items: Event[] }> = ({ items }) => {
+
+interface EventListProps {
+  items: Event[];
+}
+const EventList: React.FC<EventListProps> = ({ items }) => {
   return (
     <ul className={classes.list}>
       {items.map((event) => (
