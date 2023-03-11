@@ -2,7 +2,7 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-LiveURL: 
+LiveURL: https://events-nextjs-gekvwzys6-lingardium.vercel.app/
 
 ## **🔎 Technologies**
 
@@ -11,7 +11,7 @@ LiveURL:
 - Sass
 
 ## 📷 Screenshots
-
+![Screenshot 2023-03-11 at 22 41 05](https://user-images.githubusercontent.com/53529387/224508437-1002bf06-2165-4af6-b36b-45ac1fd29796.jpg)
 
 ## Getting Started
 
