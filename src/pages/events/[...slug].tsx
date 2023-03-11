@@ -43,12 +43,17 @@ const FilteredEventsPage: React.FC<FilteredEventsPageProps> = (props) => {
   if (!loadedEvents) {
     return <p className="center">Loading...</p>;
   }
+  let filteredYear: string;
+  let filteredMonth: string;
+  let numYear: number | null = NaN;
+  let numMonth: number | null = NaN;
 
-  const filteredYear = filterData![0];
-  const filteredMonth = filterData![1];
-
-  const numYear = +filteredYear;
-  const numMonth = +filteredMonth;
+  if (filterData) {
+    filteredYear = filterData[0];
+    filteredMonth = filterData[1];
+    numYear = +filteredYear;
+    numMonth = +filteredMonth;
+  }
 
   if (
     isNaN(numYear) ||
@@ -73,7 +78,7 @@ const FilteredEventsPage: React.FC<FilteredEventsPageProps> = (props) => {
     const eventDate = new Date(event.date);
     return (
       eventDate.getFullYear() === numYear &&
-      eventDate.getMonth() === numMonth - 1
+      eventDate.getMonth() === numMonth! - 1
     );
   });
 
